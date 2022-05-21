@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Hi, {{ user.username }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body
-}}</b></p></div>
-    {% endfor %}
+<div class="word">
+    <form><input type="text" id="guess" name="guess"></form>
+</div>
+<ol>
+    <li><p>continuous area or expanse which is free, available, or unoccupied.</p></li>
+</ol>
 {% endblock %}

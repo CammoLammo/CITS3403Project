@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     {% if title %}
-    <title>{{ title }} - Microblog</title>
+    <title>{{ title }} - define it</title>
     {% else %}
-    <title>Microblog</title>
+    <title>define it</title>
     {% endif %}
     <link rel="stylesheet" href="{{ url_for('static',
     filename='style.css') }}">
 </head>
 <body>
-    <div class="header">
-    Microblog:
-    <a href="/index">Home</a>
-    <a href="/button">Button!</a>
-    </div>
+    define it <br>
+    <p1>/dɪˈfʌɪn/ /ɪt/</p1> <br>
+    <a href="/index">home</a>
+    <p2>•</p2>
+    <a href="/button">info</a>
     <hr>
     {% block content %}{% endblock %}
 </body>
