@@ -1,26 +1,50 @@
-var trueGuess = "zone";
+let wordData = [
+    [0, "lettuce", "A cultivated plant of the daisy family, with edible leaves that are eaten in salads.", "NOUN", "‘Verlaine's chine was stuffed with leeks, spring onions, [REDACTED], raspberry leaves, parsley, thyme and marjoram.’"], 
+    [1, "annoy", "Make (someone) a little angry; irritate.", "VERB", "‘the decision really [REDACTED]ed him’"], 
+    [2, "card", "A piece of thick, stiff paper or thin pasteboard, in particular one used for writing or printing on.", "NOUN", "‘some notes jotted down on a [REDACTED]’"], 
+    [3, "past", "Gone by in time and no longer existing.", "ADJECTIVE", "‘the danger is now [REDACTED]’"], 
+    [4, "country", "A nation with its own government, occupying a particular territory.", "NOUN", "‘the [REDACTED]'s increasingly precarious economic position’"], 
+    [5, "locket", "A small ornamental case, typically made of gold or silver, worn round a person's neck on a chain and used to hold things of sentimental value, such as a photograph or lock of hair.", "NOUN", "‘A gold chain with a [REDACTED] containing a picture of her late husband hung around her neck as it did every day.’"], 
+];
+
+var wordID = 0;
+var trueGuess = "null";
 var guessedWords = [];
 var numGuesses = 0;
 var guessOutput = document.getElementById("guessOutput");
 var userGuess = document.getElementById("guess");
 var userGuessText = document.getElementById("userGuessText");
 var trueGuessText = document.getElementById("trueGuessText");
+
+var today = new Date();
+const startDay = new Date('05/22/2022');
+
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+var diffTime = Math.abs(today - startDay);
+
+wordID = Math.ceil(diffTime / (1000 * 60 * 60 *24)) - 1;
+
+
+for(let i = 0; i < wordData.length; i++ ){
+    console.log(wordData[i][0]);
+    if (wordData[i][0] == wordID){
+        document.getElementById("clue1").innerHTML = wordData[i][2];
+        console.log((wordData[i][1]));
+        trueGuess = (wordData[i][1]);
+        clue2 = "part of language: " + wordData[i][3];
+        clue3 = "used in a sentence: " + wordData[i][4];
+        clue4 = "The first letter is: " + trueGuess.charAt(0);
+        clue5 = "you are retarded";
+    }
+}
+
+document.getElementById("guessOutput").innerHTML = wordID;
+
 userGuess.addEventListener("keydown", function(checkEnter){
     if (checkEnter.key == "Enter"){
         submitGuess(checkEnter);
 }});
-
-const diffDays = (date, otherDate) => Math.ceil(Math.abs(date - otherDate) / (1000 * 60 * 60 * 24));
-
-
-wordID = diffDays(new Date('2022-5-22'), new Date(today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()));
-
-guessOutput.innerHTML = wordID;
-
-clue2 = '';
-clue3 = '';
-clue4 = '';
-clue5 = '';
 
 function submitGuess(checkEnter){
     var userGuessInput = checkEnter.target.value.toLowerCase();
@@ -33,16 +57,16 @@ function submitGuess(checkEnter){
         guessedWords.push(userGuessInput)
         switch (numGuesses){
             case 1:
-                document.getElementById("clue2").innerHTML = "CLUE 2!";
+                document.getElementById("clue2").innerHTML = clue2;
                 break;
             case 2:
-                document.getElementById("clue3").innerHTML = "CLUE 3!";
+                document.getElementById("clue3").innerHTML = clue3;
                 break;
             case 3:
-                document.getElementById("clue4").innerHTML = "CLUE 4!";
+                document.getElementById("clue4").innerHTML = clue4;
                 break;
             case 4:
-                document.getElementById("clue5").innerHTML = "CLUE 5!";
+                document.getElementById("clue5").innerHTML = clue5;
                 break;
             case 5:
                 document.getElementById("failure").innerHTML = "YOU HAVE FAILED!";

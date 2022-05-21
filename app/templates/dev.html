@@ -2,6 +2,8 @@
 {% block content %}
 <h1>Create new puzzle</h1>
 <form action="" method="post">
+    <script src="{{ url_for('static', filename='guessClues.js')
+    }}"></script>
     {{ form.hidden_tag() }}
         <p>
             {{ form.word.label }}
@@ -29,5 +31,27 @@
         </p>
         <br>
         <p>{{ form.submit() }}</p>
+
+        <input type="file" name="file" id="myfl">
+        <pre id="debug69">debug</pre>
+        <pre id="output"></pre> 
+        <script type="text/javascript"> 
+            document.getElementById('myfl') 
+                .addEventListener('change', function() { 
+                  
+                var fr=new FileReader(); 
+                fr.onload=function(){ 
+                    document.getElementById('output') 
+                            .textContent=fr.result; 
+                } 
+                  
+                fr.readAsText(this.files[0]); 
+            }) 
+        </script> 
+
+        <button type="button" id="loadbutton" onclick="loadFunction();">load</button>
+ 
+
+
 </form>
 {% endblock %}

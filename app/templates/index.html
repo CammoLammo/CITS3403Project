@@ -4,7 +4,7 @@
     <div class="word">
         <input type="text" id="guess" name="guess" autocomplete="off" placeholder="Define It!">
     </div>
-    <ol>
+    <ol onload="Startup()">
         <li id="clue1"><p>continuous area or expanse which is free, available, or unoccupied.</p></li>
         <li id="clue2"><p></p></li>
         <li id="clue3"><p></p></li>
@@ -16,5 +16,6 @@
     <p id="userGuessText"></p>
     <p id="trueGuessText"></p>
     <script src="{{ url_for('static', filename='guessClues.js')
-    }}"></script>
+    }}">
+</script>
 {% endblock %}
