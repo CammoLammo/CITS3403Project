@@ -31,25 +31,6 @@
         </p>
         <br>
         <p>{{ form.submit() }}</p>
-
-        <input type="file" name="file" id="myfl">
-        <pre id="debug69">debug</pre>
-        <pre id="output"></pre> 
-        <script type="text/javascript"> 
-            document.getElementById('myfl') 
-                .addEventListener('change', function() { 
-                  
-                var fr=new FileReader(); 
-                fr.onload=function(){ 
-                    document.getElementById('output') 
-                            .textContent=fr.result; 
-                } 
-                  
-                fr.readAsText(this.files[0]); 
-            }) 
-        </script> 
-
-        <button type="button" id="loadbutton" onclick="loadFunction();">load</button>
  
 
 
