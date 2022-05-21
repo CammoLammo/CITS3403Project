@@ -1,9 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="word">
-    <form><input type="text" id="guess" name="guess"></form>
-</div>
-<ol>
-    <li><p>continuous area or expanse which is free, available, or unoccupied.</p></li>
-</ol>
+    <h1>Welcome, {{ current_user.username }}!</h1>
+    <div class="word">
+        <input type="text" id="guess" name="guess" autocomplete="off" placeholder="Define It!">
+    </div>
+    <ol>
+        <li id="clue1"><p>continuous area or expanse which is free, available, or unoccupied.</p></li>
+        <li id="clue2"><p></p></li>
+        <li id="clue3"><p></p></li>
+        <li id="clue4"><p></p></li>
+        <li id="clue5"><p></p></li>
+        <li id="failure"><p></p></li>
+    </ol>
+    <p id="guessOutput"></p>
+    <p id="userGuessText"></p>
+    <p id="trueGuessText"></p>
+    <script src="{{ url_for('static', filename='guessClues.js')
+    }}"></script>
 {% endblock %}

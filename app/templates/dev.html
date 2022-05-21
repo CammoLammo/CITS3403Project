@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Create new puzzle</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+        <p>
+            {{ form.word.label }}
+            {{ form.word(size=32) }}
+        </p>
+        <br>
+        <p>
+            {{ form.wordType.label }}
+            {{ form.wordType(size=32) }}
+        </p>
+        <br>
+        <p>
+            {{ form.definition.label }}
+            {{ form.definition(size=32) }}
+        </p>
+        <br>
+        <p>
+            {{ form.sentence.label }}
+            {{ form.sentence(size=32) }}
+        </p>
+        <br>
+        <p>
+            {{ form.similarWords.label }}
+            {{ form.similarWords(size=32) }}
+        </p>
+        <br>
+        <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

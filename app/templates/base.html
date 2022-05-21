@@ -12,10 +12,29 @@
 <body>
     define it <br>
     <p1>/dɪˈfʌɪn/ /ɪt/</p1> <br>
-    <a href="/index">home</a>
+    <a href="{{ url_for('introduction') }}">Welcome</a>
     <p2>•</p2>
-    <a href="/button">info</a>
+    <a href="{{ url_for('index') }}">Play</a>
+    <p2>•</p2>
+    <a href="{{ url_for('button') }}">button</a>
+    <p2>•</p2>
+    <a href="{{ url_for('dev') }}">Dev Tools</a>
+    <p2>•</p2>
+    {% if current_user.is_anonymous %}
+    <a href="{{ url_for('login') }}">Log In</a>
+    {% else %}
+    <a href="{{ url_for('logout') }}">Log Out</a>
+    {% endif %}
     <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
     {% block content %}{% endblock %}
 </body>
 </html>
