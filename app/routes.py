@@ -4,20 +4,12 @@ from flask import render_template
 @app.route('/')
 @app.route('/index')
 def index():
-    user = {'username': 'Miguel'}
-    posts = [
-    {
-        'author': {'username': 'John'},
-        'body': 'Beautiful day in Portland!'
-    },
-    {
-        'author': {'username': 'Susan'},
-        'body': 'The Avengers movie was so cool!'
-    }
-    ]
-    return render_template("index.html", title="Home", user=user,
-    posts=posts)
+    return render_template("index.html", title="Play")
 
 @app.route('/button')
 def button():
     return render_template("button.html", title="Button!")
+
+@app.route('/introduction')
+def introduction():
+    return render_template("introduction.html", title="Welcome")
