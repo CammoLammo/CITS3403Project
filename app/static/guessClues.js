@@ -10,7 +10,17 @@ userGuess.addEventListener("keydown", function(checkEnter){
         submitGuess(checkEnter);
 }});
 
-guessOutput.innerHTML = "test123";
+const diffDays = (date, otherDate) => Math.ceil(Math.abs(date - otherDate) / (1000 * 60 * 60 * 24));
+
+
+wordID = diffDays(new Date('2022-5-22'), new Date(today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()));
+
+guessOutput.innerHTML = wordID;
+
+clue2 = '';
+clue3 = '';
+clue4 = '';
+clue5 = '';
 
 function submitGuess(checkEnter){
     var userGuessInput = checkEnter.target.value.toLowerCase();
