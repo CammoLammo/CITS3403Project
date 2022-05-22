@@ -4,3 +4,4 @@
 [3, "past", "Gone by in time and no longer existing.", "ADJECTIVE", "‘the danger is now [REDACTED]’"], 
 [4, "country", "A nation with its own government, occupying a particular territory.", "NOUN", "‘the [REDACTED]'s increasingly precarious economic position’"], 
 [5, "locket", "A small ornamental case, typically made of gold or silver, worn round a person's neck on a chain and used to hold things of sentimental value, such as a photograph or lock of hair.", "NOUN", "‘A gold chain with a [REDACTED] containing a picture of her late husband hung around her neck as it did every day.’"], 
+[6, "potato", "A starchy plant tuber which is one of the most important food crops, cooked and eaten as a vegetable.", "NOUN", "‘roast [REDACTED]es’"], 

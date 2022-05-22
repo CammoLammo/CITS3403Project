@@ -7,6 +7,7 @@ let wordData = [
     [5, "locket", "A small ornamental case, typically made of gold or silver, worn round a person's neck on a chain and used to hold things of sentimental value, such as a photograph or lock of hair.", "NOUN", "‘A gold chain with a [REDACTED] containing a picture of her late husband hung around her neck as it did every day.’"], 
 ];
 
+var offset = 1;
 var wordID = 0;
 var trueGuess = "null";
 var guessedWords = [];
@@ -23,8 +24,7 @@ var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
 var diffTime = Math.abs(today - startDay);
 
-wordID = Math.ceil(diffTime / (1000 * 60 * 60 *24)) - 1;
-
+wordID = Math.ceil(diffTime / (1000 * 60 * 60 *24)) - offset;
 
 for(let i = 0; i < wordData.length; i++ ){
     console.log(wordData[i][0]);
@@ -37,6 +37,10 @@ for(let i = 0; i < wordData.length; i++ ){
         clue4 = "The first letter is: " + trueGuess.charAt(0);
         clue5 = "you are retarded";
     }
+}
+
+function SkipPuzzle(){
+    offset -= 1;
 }
 
 document.getElementById("guessOutput").innerHTML = wordID;
@@ -73,7 +77,19 @@ function submitGuess(checkEnter){
         }
     }
     else{
-        alert("CORRECT ANSWER!");
+        var modal = document.getElementById("myModal");
+        var span = document.getElementsByClassName("close")[0];
+
+        document.getElementById("answer").innerHTML = trueGuess;
+        modal.style.display = "block";
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+        }
     }
     guessOutput.innerHTML = checkGuess;
     trueGuessText.innerHTML = trueGuess;
