@@ -31,7 +31,7 @@
         <li class="active"><a href="{{ url_for('index') }}">play</a></li>
         <li><a href="{{ url_for('introduction') }}">info</a></li>
         <li><a href="{{ url_for('stats') }}">stats</a></li>
-        <li><a href="{{ url_for('dev') }}">dev tools</a></li>
+        <li><a href="{{ url_for('admincheck') }}">dev tools</a></li>
         <li>
             {% if current_user.is_anonymous %}
             <a href="{{ url_for('login') }}">Log In</a>
