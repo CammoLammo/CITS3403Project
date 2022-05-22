@@ -1,6 +1,6 @@
 from app import app, db
 from flask import render_template, flash, redirect, url_for
-from flask_login import current_user, login_user, logout_user
+from flask_login import current_user, login_required, login_user, logout_user
 from app.forms import LoginForm, SignUpForm, NewPuzzleForm
 from app.models import User, Puzzle
 
@@ -9,9 +9,13 @@ from app.models import User, Puzzle
 def index():
     return render_template("index.html", title="Play")
 
-@app.route('/button')
-def button():
-    return render_template("button.html", title="Button!")
+@app.route('/stats')
+@login_required
+def stats():
+    userID = current_user.get_id()
+    user = User.query.filter_by(id=userID).first()
+
+    return render_template("stats.html", title="Stats")
 
 @app.route('/introduction')
 def introduction():
