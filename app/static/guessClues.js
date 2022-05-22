@@ -61,17 +61,20 @@ function initialisePuzzle(){
             numGuesses = responseObject.guesses;
             document.getElementById("clue1").innerHTML = responseObject.definition;
             trueGuess = responseObject.word;
-            clue2 = "part of language: " + responseObject.wordType;
-            clue3 = "used in a sentence: " + responseObject.sentence;
-            clue4 = "The first letter is: " + responseObject.word.charAt(0);
-            clue5 = "goofy ahh";
+            clue2 = responseObject.wordType.toLowerCase();
+            clue3 = '"'+responseObject.sentence.slice(1,-1)+'"';
+            clue4 = responseObject.word.charAt(0);
+            clue5 = "one guess remaining";
 
             if(numGuesses > 0){
                 document.getElementById("clue2").innerHTML = clue2;
+                document.getElementById("clue5").innerHTML = "four guesses remaining";
                 if(numGuesses > 1){
                     document.getElementById("clue3").innerHTML = clue3;
+                    document.getElementById("clue5").innerHTML = "three guesses remaining";
                     if(numGuesses > 2){
                         document.getElementById("clue4").innerHTML = clue4;
+                        document.getElementById("clue5").innerHTML = "two guesses remaining";
                         if(numGuesses > 3){
                             document.getElementById("clue5").innerHTML = clue5;
                             if(numGuesses > 4){
@@ -119,7 +122,7 @@ function submitGuess(checkEnter){
                 });
                 break;
             case 3:
-                document.getElementById("soln").innerHTML = clue4;
+                document.getElementById("clue4").innerHTML = clue4;
                 document.getElementById("clue4").innerHTML = clue4;
                 var requestJSON = {"requestType": "middleGuess"};
                 var requestJSONString = JSON.stringify(requestJSON);
@@ -142,7 +145,9 @@ function submitGuess(checkEnter){
                 });
                 break;
             case 5:
-                document.getElementById("failure").innerHTML = "YOU HAVE FAILED!";
+                document.getElementById("failure").innerHTML = "you didn't guess the word";
+                document.getElementById("clue4").innerHTML = trueGuess;
+                document.getElementById("guess").disabled = true;
                 var requestJSON = {"requestType": "finalGuess"};
                 var requestJSONString = JSON.stringify(requestJSON);
                 $.ajax({
@@ -167,7 +172,8 @@ function submitGuess(checkEnter){
         });
 
         document.getElementById("answer").innerHTML = trueGuess;
-        document.getElementById("soln").innerHTML = trueGuess;
+        document.getElementById("clue4").innerHTML = trueGuess;
+        document.getElementById("clue5").innerHTML = "you win";
         modal.style.display = "block";
         span.onclick = function() {
             modal.style.display = "none";
