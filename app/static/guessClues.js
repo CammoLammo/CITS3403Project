@@ -178,7 +178,4 @@ function submitGuess(checkEnter){
             }
         }
     }
-    guessOutput.innerHTML = checkGuess;
-    trueGuessText.innerHTML = trueGuess;
-    userGuessText.innerHTML = userGuessInput;
 }
