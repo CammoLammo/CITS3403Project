@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+<body onload="initialisePuzzle()">
     <h1>Welcome, {{ current_user.username }}!</h1>
     <div class="word">
         <input type="text" id="guess" name="guess" autocomplete="off" placeholder="Define It!">
     </div>
     <ol>
-        <li id="clue1"><p>continuous area or expanse which is free, available, or unoccupied.</p></li>
+        <li id="clue1"><p></p></li>
         <li id="clue2"><p></p></li>
         <li id="clue3"><p></p></li>
         <li id="clue4"><p></p></li>
@@ -25,5 +26,6 @@
     </div>
     <script src="{{ url_for('static', filename='guessClues.js')
     }}" async src="https://platform.twitter.com/widgets.js" charset="utf-8">
-</script>
+    </script>
+</body>
 {% endblock %}
