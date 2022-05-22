@@ -104,7 +104,7 @@ html body{
     height: 39px !important;
   }
 
-  /* The Modal (background) */
+  /* The Modal (background) SOURCE: w3schools*/
 .modal {
   animation-name: example;
   animation-duration: 2s;
