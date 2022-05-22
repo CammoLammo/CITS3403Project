@@ -1,4 +1,4 @@
-from app import db, login
+from app import app, db, login
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -17,6 +17,7 @@ class User(UserMixin, db.Model):
     bestStreak = db.Column(db.Integer)
     todayGuesses = db.Column(db.Integer)
     todayCorrect = db.Column(db.Integer)
+    isAdmin = db.Column(db.Boolean)
 
     def create_hash(self, password):
         self.password_hash = generate_password_hash(password)
@@ -33,7 +34,6 @@ class Puzzle(db.Model):
     wordType = db.Column(db.String(32))
     definition = db.Column(db.String(256))
     sentence = db.Column(db.String(256))
-    similarWords = db.Column(db.String(256))
 
     def __repr__(self):
         return '<Word {}>'.format(self.word)

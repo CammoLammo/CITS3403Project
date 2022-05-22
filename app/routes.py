@@ -1,11 +1,13 @@
 from app import app, db
 from flask import jsonify, render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_required, login_user, logout_user
+from flask_user import roles_required
 from app.forms import LoginForm, SignUpForm, NewPuzzleForm
 from app.models import User, Puzzle
 
 @app.route('/')
 @app.route('/index', methods=['GET', 'POST'])
+@login_required
 def index():
     # userID = current_user.get_id()
     # user = User.query.filter_by(id=userID).first()
@@ -95,3 +97,12 @@ def dev():
         db.session.commit()
         flash('Your new puzzle has been added')
     return render_template('dev.html', title="Dev Tools", form=form)
+
+@app.route('/admincheck', methods=['GET', 'POST'])
+@login_required
+def admincheck():
+    if current_user.isAdmin:
+        return redirect(url_for('dev'))
+    else:
+        flash('You do not have permission to access Developer Tools')
+    return render_template('admincheck.html', title="Admin Check")

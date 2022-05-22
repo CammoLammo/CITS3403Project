@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, ValidationError, EqualTo
-from app.models import User
+from app.models import User, Puzzle
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -15,7 +15,7 @@ class SignUpForm(FlaskForm):
     password2 = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Register')
 
-    def unique_username(self, username):
+    def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user is not None:
             raise ValidationError('This username is already taken')
@@ -27,3 +27,8 @@ class NewPuzzleForm(FlaskForm):
     sentence = StringField('Used in a Sentence', validators=[DataRequired()])
     similarWords = StringField('Synonyms')
     submit = SubmitField('Add Puzzle')
+
+    def validate_word(self, word):
+        wordDup = Puzzle.query.filter_by(word=word.data).first()
+        if wordDup is not None:
+            raise ValidationError('This puzzle is already in the database')

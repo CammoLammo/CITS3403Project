@@ -14,10 +14,6 @@
     <link rel="stylesheet" href="{{ url_for('static',
     filename='style.css') }}">
 </head>
-<script src="{{ url_for('static', filename='guessClues.js')
-    }}" async src="https://platform.twitter.com/widgets.js" charset="utf-8">
-</script>
-
 
 <nav class="navbar navbar-default h-100">
     <div class="container-fluid">
@@ -29,7 +25,7 @@
         <li><a href="{{ url_for('index') }}">play</a></li>
         <li><a href="{{ url_for('introduction') }}">info</a></li>
         <li><a href="{{ url_for('stats') }}">stats</a></li>
-        <li><a href="{{ url_for('dev') }}">dev tools</a></li>
+        <li><a href="{{ url_for('admincheck') }}">dev tools</a></li>
         <li>
             {% if current_user.is_anonymous %}
             <a href="{{ url_for('login') }}">Log In</a>
@@ -43,12 +39,13 @@
 <div class="container">
 <h1>Create new puzzle</h1>
 <form action="" method="post">
-    <script src="{{ url_for('static', filename='guessClues.js')
-    }}"></script>
     {{ form.hidden_tag() }}
         <p>
             {{ form.word.label }}
             {{ form.word(size=32) }}
+            {% for error in form.word.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
         </p>
         <br>
         <p>
