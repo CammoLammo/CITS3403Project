@@ -1,13 +1,4 @@
-// let wordData = [
-//     [0, "lettuce", "A cultivated plant of the daisy family, with edible leaves that are eaten in salads.", "NOUN", "‘Verlaine's chine was stuffed with leeks, spring onions, [REDACTED], raspberry leaves, parsley, thyme and marjoram.’"], 
-//     [1, "annoy", "Make (someone) a little angry; irritate.", "VERB", "‘the decision really [REDACTED]ed him’"], 
-//     [2, "card", "A piece of thick, stiff paper or thin pasteboard, in particular one used for writing or printing on.", "NOUN", "‘some notes jotted down on a [REDACTED]’"], 
-//     [3, "past", "Gone by in time and no longer existing.", "ADJECTIVE", "‘the danger is now [REDACTED]’"], 
-//     [4, "country", "A nation with its own government, occupying a particular territory.", "NOUN", "‘the [REDACTED]'s increasingly precarious economic position’"], 
-//     [5, "locket", "A small ornamental case, typically made of gold or silver, worn round a person's neck on a chain and used to hold things of sentimental value, such as a photograph or lock of hair.", "NOUN", "‘A gold chain with a [REDACTED] containing a picture of her late husband hung around her neck as it did every day.’"], 
-// ];
-
-var offset = 0;
+var offset = 1;
 var wordID = 0;
 var trueGuess = "null";
 var guessedWords = [];
@@ -26,19 +17,6 @@ var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 var diffTime = Math.abs(today - startDay);
 
 wordID = Math.ceil(diffTime / (1000 * 60 * 60 *24)) - offset;
-
-// for(let i = 0; i < wordData.length; i++ ){
-//     console.log(wordData[i][0]);
-//     if (wordData[i][0] == wordID){
-//         document.getElementById("clue1").innerHTML = wordData[i][2];
-//         console.log((wordData[i][1]));
-//         trueGuess = (wordData[i][1]);
-//         clue2 = "part of language: " + wordData[i][3];
-//         clue3 = "used in a sentence: " + wordData[i][4];
-//         clue4 = "The first letter is: " + trueGuess.charAt(0);
-//         clue5 = "you are retarded";
-//     }
-// }
 
 userGuess.addEventListener("keydown", function(checkEnter){
     if (checkEnter.key == "Enter"){
