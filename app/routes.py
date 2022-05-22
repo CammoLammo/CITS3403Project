@@ -1,7 +1,6 @@
 from app import app, db
 from flask import jsonify, render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_required, login_user, logout_user
-from flask_user import roles_required
 from app.forms import LoginForm, SignUpForm, NewPuzzleForm
 from app.models import User, Puzzle
 
