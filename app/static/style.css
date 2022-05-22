@@ -106,6 +106,9 @@ html body{
 
   /* The Modal (background) */
 .modal {
+  animation-name: example;
+  animation-duration: 2s;
+  animation-timing-function: ease;
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -120,6 +123,9 @@ html body{
 
 /* Modal Content/Box */
 .modal-content {
+  animation-name: example;
+  animation-duration: 2s;
+  animation-timing-function: ease;
   color: #e8eaed;
   font-style: bold;
   text-align: center;
