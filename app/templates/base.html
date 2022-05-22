@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     {% if title %}
@@ -10,32 +15,26 @@
     <link rel="stylesheet" href="{{ url_for('static',
     filename='style.css') }}">
 </head>
-<body>
-    define it <br>
-    <p1>/dɪˈfʌɪn/ /ɪt/</p1> <br>
-    <a href="{{ url_for('introduction') }}">Welcome</a>
-    <p2>•</p2>
-    <a href="{{ url_for('index') }}">Play</a>
-    <p2>•</p2>
-    <a href="{{ url_for('stats') }}">Stats</a>
-    <p2>•</p2>
-    <a href="{{ url_for('dev') }}">Dev Tools</a>
-    <p2>•</p2>
-    {% if current_user.is_anonymous %}
-    <a href="{{ url_for('login') }}">Log In</a>
-    {% else %}
-    <a href="{{ url_for('logout') }}">Log Out</a>
-    {% endif %}
-    <hr>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul>
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
-    {% block content %}{% endblock %}
-</body>
+
+<nav class="navbar navbar-default h-100">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        define it<br>
+        <p1>/dɪˈfʌɪn/ /ɪt/</p1>
+      </div>
+      <ul class="nav navbar-nav" style="padding: 10px;">
+        <li class="active"><a href="{{ url_for('index') }}">play</a></li>
+        <li><a href="{{ url_for('introduction') }}">info</a></li>
+        <li><a href="{{ url_for('stats') }}">stats</a></li>
+        <li><a href="{{ url_for('dev') }}">dev tools</a></li>
+        <li>
+            {% if current_user.is_anonymous %}
+            <a href="{{ url_for('login') }}">Log In</a>
+            {% else %}
+            <a href="{{ url_for('logout') }}">Log Out</a>
+            {% endif %}
+        </li>
+      </ul>
+    </div>
+  </nav>
 </html>
