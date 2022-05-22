@@ -7,7 +7,7 @@ let wordData = [
     [5, "locket", "A small ornamental case, typically made of gold or silver, worn round a person's neck on a chain and used to hold things of sentimental value, such as a photograph or lock of hair.", "NOUN", "‘A gold chain with a [REDACTED] containing a picture of her late husband hung around her neck as it did every day.’"], 
 ];
 
-var offset = 1;
+var offset = 0;
 var wordID = 0;
 var trueGuess = "null";
 var guessedWords = [];
@@ -38,12 +38,6 @@ for(let i = 0; i < wordData.length; i++ ){
         clue5 = "you are retarded";
     }
 }
-
-function SkipPuzzle(){
-    offset -= 1;
-}
-
-document.getElementById("guessOutput").innerHTML = wordID;
 
 userGuess.addEventListener("keydown", function(checkEnter){
     if (checkEnter.key == "Enter"){

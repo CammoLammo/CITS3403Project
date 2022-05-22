@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-    <p3>welcome!</p3><br>
-    <p>guess the word based on the given definition</p><br>
-    <p>each incorrect guess reveals more information</p>
-    <ol>
+    <h1 class="fadean">Welcome, {{ current_user.username }}!</h1>
+    <p class="fadean">guess the word based on the given definition</p><br>
+    <p class="fadean">each incorrect guess reveals more information</p>
+    <ol class="fadean">
         <li>definition</li>
         <li>language part (noun, verb adjective...)</li>
         <li>example sentence</li>
