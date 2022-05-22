@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Stats for {{ current_user.username }}</h1>
+    <div id="statsDisplay">
+        <p>Games played: {{ current_user.gamesPlayed }}</p>
+        <br>
+        <p>Games won: {{ current_user.gamesWon }}</p>
+        <br>
+        <p>Total Guesses: {{ current_user.totalGuesses }}</p>
+        <br>
+        <p>Current Streak: {{ current_user.currentStreak }}</p>
+        <br>
+        <p>Best Streak: {{ current_user.bestStreak }}</p>
+    </div>
+{% endblock %}

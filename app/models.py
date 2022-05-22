@@ -15,6 +15,8 @@ class User(UserMixin, db.Model):
     totalGuesses = db.Column(db.Integer)
     currentStreak = db.Column(db.Integer)
     bestStreak = db.Column(db.Integer)
+    todayGuesses = db.Column(db.Integer)
+    todayCorrect = db.Column(db.Integer)
 
     def create_hash(self, password):
         self.password_hash = generate_password_hash(password)
