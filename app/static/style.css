@@ -5,16 +5,28 @@
     }
     .row.content {height:auto;} 
   }
+
+  @keyframes example {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
 html body{
+    animation-timing-function: ease;
+    animation-name: example;
+    animation-duration: 2s;
     background-color: rgb(32, 33, 36);
+    color: rgb(154, 160, 166, 0.4);
 }
   .navbar-header{
+    opacity: 1 !important;
       margin-top: auto;
       margin-bottom: auto;
       padding-top: 10px;
   }
 
   .navbar{
+    opacity: 1 !important;
     background-color: rgb(49, 52, 66);
     color: #e8eaed;
   }
@@ -24,4 +36,122 @@ html body{
     color: #e8eaed;
     font-size: 28px;
     font-weight: 400;
+    animation-name: example;
+    animation-duration: 2s;
+    animation-timing-function: ease;
   }
+  
+  .langpart{
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+    animation-name: example;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+  }
+
+  .defin{
+    color: #bdc1c6;
+    list-style: none;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    animation-name: example;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+  }
+
+  .sentuse{
+    list-style: none;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #b1b7bd;
+    animation-name: example;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+  }
+
+  .word{
+    font: 14px arial,sans-serif;
+    border: none;
+    outline: none;
+    background: none;
+    color: #e8eaed;
+    font-size: 14px;
+    height: 39px !important;
+    padding-left: 3px;
+  }
+
+  label[for="guess"]{
+    font: 14px arial,sans-serif;
+    padding-left: 1%;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    color: #e8eaed;
+    display: flex;
+    background: #303134;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 3px rgba(23,23,23,0.24);
+    border-radius: 24px;
+    margin: 0 auto;
+    align-items: center;
+    height: 39px !important;
+  }
+
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  color: #e8eaed;
+  font-style: bold;
+  text-align: center;
+  background-color: rgb(0, 0, 0, 0.8);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#changeText {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.hide {
+  opacity: 0 !important;
+}
+  
+
+  
+  
+  
+ 
+  
