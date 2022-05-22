@@ -78,7 +78,10 @@ function initialisePuzzle(){
                         if(numGuesses > 3){
                             document.getElementById("clue5").innerHTML = clue5;
                             if(numGuesses > 4){
-                                document.getElementById("failure").innerHTML = "You have used all your guesses";
+                                document.getElementById("clue5").innerHTML = "you have used all your guesses";
+                                document.getElementById("guess").disabled = true;
+                                document.getElementById("clue4").innerHTML = trueGuess;    
+                                document.getElementById("failure").innerHTML = "you didn't guess the word"
                             }
                         }
                     }
@@ -100,6 +103,7 @@ function submitGuess(checkEnter){
         guessedWords.push(userGuessInput)
         switch (numGuesses){
             case 1:
+                document.getElementById("clue5").innerHTML = "four guesses remaining";
                 document.getElementById("clue2").innerHTML = clue2;
                 var requestJSON = {"requestType": "firstGuess"};
                 var requestJSONString = JSON.stringify(requestJSON);
@@ -111,6 +115,7 @@ function submitGuess(checkEnter){
                 });
                 break;
             case 2:
+                document.getElementById("clue5").innerHTML = "three guesses remaining";
                 document.getElementById("clue3").innerHTML = clue3;
                 var requestJSON = {"requestType": "middleGuess"};
                 var requestJSONString = JSON.stringify(requestJSON);
@@ -122,6 +127,7 @@ function submitGuess(checkEnter){
                 });
                 break;
             case 3:
+                document.getElementById("clue5").innerHTML = "two guesses remaining";
                 document.getElementById("clue4").innerHTML = clue4;
                 document.getElementById("clue4").innerHTML = clue4;
                 var requestJSON = {"requestType": "middleGuess"};
@@ -134,6 +140,7 @@ function submitGuess(checkEnter){
                 });
                 break;
             case 4:
+                document.getElementById("clue5").innerHTML = "one guesses remaining";
                 document.getElementById("clue5").innerHTML = clue5;
                 var requestJSON = {"requestType": "middleGuess"};
                 var requestJSONString = JSON.stringify(requestJSON);
@@ -145,6 +152,7 @@ function submitGuess(checkEnter){
                 });
                 break;
             case 5:
+                document.getElementById("clue5").innerHTML = "you have used all your guesses";
                 document.getElementById("failure").innerHTML = "you didn't guess the word";
                 document.getElementById("clue4").innerHTML = trueGuess;
                 document.getElementById("guess").disabled = true;
