@@ -5,9 +5,23 @@
     }
     .row.content {height:auto;} 
   }
-
+html body{
+    background-color: rgb(32, 33, 36);
+}
   .navbar-header{
       margin-top: auto;
       margin-bottom: auto;
       padding-top: 10px;
+  }
+
+  .navbar{
+    background-color: rgb(49, 52, 66);
+    color: #e8eaed;
+  }
+
+  .wordstyle{
+    font-family: Google Sans,arial,sans-serif;
+    color: #e8eaed;
+    font-size: 28px;
+    font-weight: 400;
   }

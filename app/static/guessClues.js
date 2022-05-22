@@ -32,9 +32,9 @@ for(let i = 0; i < wordData.length; i++ ){
         document.getElementById("clue1").innerHTML = wordData[i][2];
         console.log((wordData[i][1]));
         trueGuess = (wordData[i][1]);
-        clue2 = "part of language: " + wordData[i][3];
-        clue3 = "used in a sentence: " + wordData[i][4];
-        clue4 = "The first letter is: " + trueGuess.charAt(0);
+        clue2 = wordData[i][3].toLowerCase();
+        clue3 = wordData[i][4];
+        clue4 = trueGuess.charAt(0);
         clue5 = "you are retarded";
     }
 }
@@ -61,7 +61,7 @@ function submitGuess(checkEnter){
                 document.getElementById("clue3").innerHTML = clue3;
                 break;
             case 3:
-                document.getElementById("clue4").innerHTML = clue4;
+                document.getElementById("soln").innerHTML = clue4;
                 break;
             case 4:
                 document.getElementById("clue5").innerHTML = clue5;
@@ -75,6 +75,7 @@ function submitGuess(checkEnter){
         var span = document.getElementsByClassName("close")[0];
 
         document.getElementById("answer").innerHTML = trueGuess;
+        document.getElementById("soln").innerHTML = trueGuess;
         modal.style.display = "block";
         span.onclick = function() {
             modal.style.display = "none";
