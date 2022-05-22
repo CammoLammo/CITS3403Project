@@ -6,6 +6,7 @@ from app.models import User, Puzzle
 
 @app.route('/')
 @app.route('/index', methods=['GET', 'POST'])
+@login_required
 def index():
     # userID = current_user.get_id()
     # user = User.query.filter_by(id=userID).first()
