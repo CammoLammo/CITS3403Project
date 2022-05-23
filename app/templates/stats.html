@@ -24,7 +24,7 @@
       <ul class="nav navbar-nav" style="padding: 10px;">
         <li><a href="{{ url_for('index') }}">play</a></li>
         <li><a href="{{ url_for('introduction') }}">info</a></li>
-        <li><a href="{{ url_for('stats') }}">stats</a></li>
+        <li class="active"><a href="{{ url_for('stats') }}">stats</a></li>
         <li><a href="{{ url_for('admincheck') }}">dev tools</a></li>
         <li>
             {% if current_user.is_anonymous %}
@@ -39,7 +39,7 @@
 
   <div class="container">
     <h1>Stats for {{ current_user.username }}</h1>
-    <div id="statsDisplay">
+    <div id="statsDisplay" class="statsform">
         <p>Games played: {{ current_user.gamesPlayed }}</p>
         <br>
         <p>Games won: {{ current_user.gamesWon }}</p>

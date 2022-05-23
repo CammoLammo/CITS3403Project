@@ -11,14 +11,19 @@
     to {opacity: 1;}
   }
 
+.container{
+  animation-timing-function: ease;
+  animation-name: example;
+  animation-duration: 2s;
+}
+
 html body{
-    animation-timing-function: ease;
-    animation-name: example;
-    animation-duration: 2s;
+
     background-color: rgb(32, 33, 36);
     color: rgba(236, 241, 246, 0.844);
 }
   .navbar-header{
+    animation-play-state: paused;
     opacity: 1 !important;
       margin-top: auto;
       margin-bottom: auto;
@@ -27,6 +32,7 @@ html body{
   }
 
   .navbar{
+    animation-play-state: paused;
     opacity: 1;
     background-color: rgb(0, 0, 0);
   }
@@ -34,12 +40,13 @@ html body{
   .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     background-color: #000000;
     color: #FFC0CB;
+    animation-play-state: paused;
 }
 
   .wordstyle{
     font-family: Google Sans,arial,sans-serif;
     color: #e8eaed;
-    font-size: 28px;
+    font-size: xx-large;
     font-weight: 400;
     animation-name: example;
     animation-duration: 2s;
@@ -48,7 +55,7 @@ html body{
   
   .langpart{
     font-family: arial,sans-serif;
-    font-size: 14px;
+    font-size: x-large;
     font-weight: 400;
     font-style: italic;
     animation-duration: 2s;
@@ -59,7 +66,7 @@ html body{
     color: #bdc1c6;
     list-style: none;
     font-family: arial,sans-serif;
-    font-size: 14px;
+    font-size: x-large;
     font-weight: 400;
     animation-name: example;
     animation-duration: 2s;
@@ -69,7 +76,7 @@ html body{
   .sentuse{
     list-style: none;
     font-family: arial,sans-serif;
-    font-size: 14px;
+    font-size: x-large;
     font-weight: 400;
     color: #b1b7bd;
     animation-name: example;
@@ -78,21 +85,21 @@ html body{
   }
 
   .word{
-    font: 14px arial,sans-serif;
+    font: 28px arial,sans-serif;
     border: none;
     outline: none;
     background: none;
     color: #e8eaed;
-    font-size: 14px;
+    font-size: x-large;
     height: 39px !important;
     padding-left: 3px;
   }
 
   label[for="guess"]{
-    font: 14px arial,sans-serif;
+    font: 28px arial,sans-serif;
     padding-left: 1%;
     font-family: arial,sans-serif;
-    font-size: 14px;
+    font-size: x-large;
     color: #e8eaed;
     display: flex;
     background: #303134;
@@ -162,8 +169,10 @@ html body{
 .paused{ 
   animation-play-state:paused;
 }
-
-  
+ 
+.statsform{
+  font-size: large;
+}
   
   
  
