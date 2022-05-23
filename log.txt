@@ -1,78 +1,103 @@
-*   commit d723b70d6584d4630420cf99036cefbed0d7e1ad (HEAD -> main, origin/main, origin/HEAD)
-|\  Merge: 4300e44 01918e1
+* commit 47bc6a78fcae6eefacc39db9d74c9c5d6f0ba10c (HEAD -> main, origin/main, origin/HEAD)
+| Author: Cameron Paterson <kamepoh2@gmail.com>
+| Date:   Mon May 23 11:24:44 2022 +0800
+| 
+|     final readme
+|   
+*   commit 40ba4fd97bd86cef5ec044061aa47f9d67448f20
+|\  Merge: 33759fe e1b680b
+| | Author: Cameron Paterson <kamepoh2@gmail.com>
+| | Date:   Mon May 23 11:23:26 2022 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/CammoLammo/CITS3403Project into main
+| | 
+| * commit e1b680bcbc151ad32f9bdd9485a317aed083570c
 | | Author: Ben Creighton <23079792@student.uwa.edu.au>
-| | Date:   Mon May 23 11:14:41 2022 +0800
+| | Date:   Mon May 23 11:15:30 2022 +0800
 | | 
-| |     Merge branch 'main' of https://github.com/CammoLammo/CITS3403Project
+| |     git log
+| |   
+| *   commit d723b70d6584d4630420cf99036cefbed0d7e1ad
+| |\  Merge: 4300e44 01918e1
+| | | Author: Ben Creighton <23079792@student.uwa.edu.au>
+| | | Date:   Mon May 23 11:14:41 2022 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/CammoLammo/CITS3403Project
+| | | 
+| * | commit 4300e44750bf8e1c9dc985e6c131d013dbae5f18
+| | | Author: Ben Creighton <23079792@student.uwa.edu.au>
+| | | Date:   Mon May 23 11:14:36 2022 +0800
+| | | 
+| | |     documentation
+| | | 
+* | | commit 33759fe791a24c3a279c28c24050444233a60fe0
+| |/  Author: Cameron Paterson <kamepoh2@gmail.com>
+|/|   Date:   Mon May 23 11:22:32 2022 +0800
+| |   
+| |       Readme formatting and test
 | | 
-| * commit 01918e18aef9dea7e0c8e15a45bcbd0f798edee5
+* | commit 01918e18aef9dea7e0c8e15a45bcbd0f798edee5
 | | Author: Cameron Paterson <kamepoh2@gmail.com>
 | | Date:   Mon May 23 11:13:52 2022 +0800
 | | 
 | |     CammoLammo
 | | 
-| * commit cf5129dd32400ada51a47a53555e3097c167f7e9
+* | commit cf5129dd32400ada51a47a53555e3097c167f7e9
 | | Author: Cameron Paterson <kamepoh2@gmail.com>
 | | Date:   Mon May 23 10:29:46 2022 +0800
 | | 
 | |     fixed stats page bug
-| |   
-| *   commit d1a0ef58e83fd033c607d64292778386743086eb
-| |\  Merge: a82d129 1fb6762
-| | | Author: Cameron Paterson <kamepoh2@gmail.com>
-| | | Date:   Mon May 23 10:28:31 2022 +0800
-| | | 
-| | |     Merge branch 'main' of https://github.com/CammoLammo/CITS3403Project into main
-| | | 
-| * | commit a82d1290eb09099f6d6dd25819df335b787513c3
-| | | Author: Cameron Paterson <kamepoh2@gmail.com>
-| | | Date:   Mon May 23 10:28:17 2022 +0800
-| | | 
-| | |     admincheck bug fix
-| | | 
-* | | commit 4300e44750bf8e1c9dc985e6c131d013dbae5f18
-| |/  Author: Ben Creighton <23079792@student.uwa.edu.au>
-|/|   Date:   Mon May 23 11:14:36 2022 +0800
-| |   
-| |       documentation
 | | 
-* | commit 1fb6762dd69747dc7f7469d797c370d81996d791
-|\| Merge: c0fea67 ea18434
-| | Author: Ben Creighton <23079792@student.uwa.edu.au>
-| | Date:   Mon May 23 10:26:23 2022 +0800
+* | commit d1a0ef58e83fd033c607d64292778386743086eb
+|\| Merge: a82d129 1fb6762
+| | Author: Cameron Paterson <kamepoh2@gmail.com>
+| | Date:   Mon May 23 10:28:31 2022 +0800
 | | 
-| |     Merge branch 'main' of https://github.com/CammoLammo/CITS3403Project
+| |     Merge branch 'main' of https://github.com/CammoLammo/CITS3403Project into main
 | |   
-| *   commit ea18434cd5d1da1336112edd039b93fd125f86d1
-| |\  Merge: 627e33d a06becb
-| | | Author: Cameron Paterson <kamepoh2@gmail.com>
-| | | Date:   Mon May 23 10:19:31 2022 +0800
+| *   commit 1fb6762dd69747dc7f7469d797c370d81996d791
+| |\  Merge: c0fea67 ea18434
+| | | Author: Ben Creighton <23079792@student.uwa.edu.au>
+| | | Date:   Mon May 23 10:26:23 2022 +0800
 | | | 
-| | |     Merge branch 'main' of https://github.com/CammoLammo/CITS3403Project into main
+| | |     Merge branch 'main' of https://github.com/CammoLammo/CITS3403Project
 | | | 
-| * | commit 627e33da70284ed444fdddf125fcdd982b088e0b
-| | | Author: Cameron Paterson <kamepoh2@gmail.com>
-| | | Date:   Mon May 23 10:19:08 2022 +0800
+| * | commit c0fea6765c915a9d083f9634f45e09b04749b2d0
+| | | Author: Ben Creighton <23079792@student.uwa.edu.au>
+| | | Date:   Mon May 23 10:26:19 2022 +0800
 | | | 
-| | |     final touches
+| | |     admin
 | | | 
-* | | commit c0fea6765c915a9d083f9634f45e09b04749b2d0
-| |/  Author: Ben Creighton <23079792@student.uwa.edu.au>
-|/|   Date:   Mon May 23 10:26:19 2022 +0800
+* | | commit a82d1290eb09099f6d6dd25819df335b787513c3
+| |/  Author: Cameron Paterson <kamepoh2@gmail.com>
+|/|   Date:   Mon May 23 10:28:17 2022 +0800
 | |   
-| |       admin
+| |       admincheck bug fix
 | | 
-* | commit a06becbdcfa64f0945bfa15e507bd3fea4471099
+* | commit ea18434cd5d1da1336112edd039b93fd125f86d1
+|\| Merge: 627e33d a06becb
+| | Author: Cameron Paterson <kamepoh2@gmail.com>
+| | Date:   Mon May 23 10:19:31 2022 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/CammoLammo/CITS3403Project into main
+| | 
+| * commit a06becbdcfa64f0945bfa15e507bd3fea4471099
 | | Author: Ben Creighton <23079792@student.uwa.edu.au>
 | | Date:   Mon May 23 10:18:55 2022 +0800
 | | 
 | |     readme
 | | 
-* | commit 3bd7e0fd816ae4bbde3ea0902f790e32a48eb3f6
-|/  Author: Ben Creighton <23079792@student.uwa.edu.au>
-|   Date:   Mon May 23 10:18:01 2022 +0800
+| * commit 3bd7e0fd816ae4bbde3ea0902f790e32a48eb3f6
+| | Author: Ben Creighton <23079792@student.uwa.edu.au>
+| | Date:   Mon May 23 10:18:01 2022 +0800
+| | 
+| |     readme
+| | 
+* | commit 627e33da70284ed444fdddf125fcdd982b088e0b
+|/  Author: Cameron Paterson <kamepoh2@gmail.com>
+|   Date:   Mon May 23 10:19:08 2022 +0800
 |   
-|       readme
+|       final touches
 |   
 *   commit 395298a68cfd2410a1c8b2cb2bac5b40ff23378e
 |\  Merge: aa20c66 358fcd5
