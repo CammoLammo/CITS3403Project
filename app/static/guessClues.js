@@ -10,7 +10,7 @@ var userGuessText = document.getElementById("userGuessText");
 var trueGuessText = document.getElementById("trueGuessText");
 
 var today = new Date();
-const startDay = new Date('05/19/2022');
+const startDay = new Date('05/20/2022');
 
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
@@ -49,13 +49,20 @@ function initialisePuzzle(){
                 document.getElementById("clue2").innerHTML = clue2;
                 document.getElementById("clue3").innerHTML = clue3;
                 document.getElementById("clue4").innerHTML = clue4;
+                document.getElementById("guess").disabled = true;
                 document.getElementById("clue5").innerHTML = "Congratulations! You have already solved today's puzzle";
 
                 var modal = document.getElementById("myModal");
                 var span = document.getElementsByClassName("close")[0];
 
+                if(numGuesses == 1){
+                    document.getElementById("guessNum").innerHTML = numGuesses + " guess";
+                }
+                else{
+                    document.getElementById("guessNum").innerHTML =  numGuesses + " guesses";
+                }
+                document.getElementById("clue4").innerHTML = trueGuess;
                 document.getElementById("answer").innerHTML = trueGuess;
-                document.getElementById("clue4").innerHTML = trueGuess;        
 
                 modal.style.display = "block";
                 span.onclick = function() {
@@ -89,7 +96,6 @@ function initialisePuzzle(){
             }
         }
     });
-
 }
 
 function submitGuess(checkEnter){
@@ -170,6 +176,7 @@ function submitGuess(checkEnter){
 
         var requestJSON = {"requestType": "correctGuess"};
         var requestJSONString = JSON.stringify(requestJSON);
+        numGuesses += 1;
         $.ajax({
             url: "/index",
             type: "POST",
@@ -179,7 +186,18 @@ function submitGuess(checkEnter){
 
         document.getElementById("answer").innerHTML = trueGuess;
         document.getElementById("clue4").innerHTML = trueGuess;
+        document.getElementById("guess").disabled = true;
         document.getElementById("clue5").innerHTML = "Congratulations! You have already solved today's puzzle";
+
+        if(numGuesses == 1){
+            document.getElementById("guessNum").innerHTML = numGuesses + " guess";
+        }
+        else{
+            document.getElementById("guessNum").innerHTML =  numGuesses + " guesses";
+        }
+        document.getElementById("clue4").innerHTML = trueGuess;
+        document.getElementById("answer").innerHTML = trueGuess;
+
         modal.style.display = "block";
         span.onclick = function() {
             modal.style.display = "none";
