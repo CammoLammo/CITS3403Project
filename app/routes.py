@@ -91,7 +91,7 @@ def signup():
 def dev():
     form = NewPuzzleForm()
     if form.validate_on_submit():
-        puzzle = Puzzle(word=form.word.data, wordType=form.wordType.data, definition=form.definition.data, sentence=form.sentence.data, similarWords=form.similarWords.data)
+        puzzle = Puzzle(word=form.word.data, wordType=form.wordType.data, definition=form.definition.data, sentence=form.sentence.data)
         db.session.add(puzzle)
         db.session.commit()
         flash('Your new puzzle has been added')

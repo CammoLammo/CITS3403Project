@@ -25,7 +25,6 @@ class NewPuzzleForm(FlaskForm):
     wordType = StringField('Part of Speech (noun, verb, etc)', validators=[DataRequired()])
     definition = StringField('Definition', validators=[DataRequired()])
     sentence = StringField('Used in a Sentence', validators=[DataRequired()])
-    similarWords = StringField('Synonyms')
     submit = SubmitField('Add Puzzle')
 
     def validate_word(self, word):
