@@ -35,5 +35,8 @@ class Puzzle(db.Model):
     definition = db.Column(db.String(256))
     sentence = db.Column(db.String(256))
 
+    def getPuzzleFirst(self):
+        return self.word[0]
+
     def __repr__(self):
         return '<Word {}>'.format(self.word)
