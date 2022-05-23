@@ -31,6 +31,8 @@ def index():
 
         elif requestType == "correctGuess":
             current_user.gamesWon += 1
+            current_user.totalGuesses += 1
+            current_user.todayGuesses += 1
             if current_user.currentStreak == current_user.bestStreak:
                 current_user.bestStreak += 1
             current_user.currentStreak += 1
