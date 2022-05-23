@@ -19,3 +19,14 @@ To stop running press: ^c (mac) or ctrl+c (windows)
 
 ## How to Test
 To run the tests.py script run the "python tests.py" command in your terminal 
+
+## Sample Database
+A sample database is provided with some sample user accounts. The user below is an administrator who can access developer tools tab and who already has some game statistics
+
+Username: cam
+
+Password: cam123
+
+For testing you can register a user and play the game as this user to view how the statistics change
+
+A new puzzle will be selected every day from the puzzles database and more can be added using the form
