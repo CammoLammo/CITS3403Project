@@ -5,9 +5,15 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="{{ url_for('static', filename='adminCheck.js')}}">
-</script>
-
+<head>
+    {% if title %}
+    <title>{{ title }} - define it</title>
+    {% else %}
+    <title>define it</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static',
+    filename='style.css') }}">
+</head>
 
 <nav class="navbar navbar-default h-100">
     <div class="container-fluid">
@@ -16,10 +22,10 @@
         <p1>/dɪˈfʌɪn/ /ɪt/</p1>
       </div>
       <ul class="nav navbar-nav" style="padding: 10px;">
-        <li class="active"><a href="{{ url_for('index') }}">play</a></li>
+        <li><a href="{{ url_for('index') }}">play</a></li>
         <li><a href="{{ url_for('introduction') }}">info</a></li>
         <li><a href="{{ url_for('stats') }}">stats</a></li>
-        <li><a href="{{ url_for('admincheck') }}">dev tools</a></li>
+        <li class="active"><a href="{{ url_for('admincheck') }}">dev tools</a></li>
         <li>
             {% if current_user.is_anonymous %}
             <a href="{{ url_for('login') }}">Log In</a>
@@ -29,11 +35,31 @@
         </li>
       </ul>
     </div>
-</nav>
+  </nav>
+  <style>
+    input[type=button], input[type=submit], input[type=reset] {
+    background-color: #000000;
+    border: none;
+    color: white;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  input, select, textarea{
+      color: #000000;
+  }
+  
+  textarea:focus, input:focus {
+      color: #000000;
+  }
+  </style>
+  
 <body onload="$.post()"></body>
 <div class="container">
     <p>Return to game <a href="{{ url_for('index') }}">here</a></p>
 </div>
+
     
 
 </html>
