@@ -11,15 +11,11 @@ Development started by copying the flask mega tutorial (https://blog.miguelgrinb
 
 
 ## How to Launch
-In the terminal of your virtual environment type:\n
-source venv/bin/activate
+In the terminal of your virtual environment type: source venv/bin/activate
 
-Then to run the website locally type:\n
-flask run
+Then to run the website locally type: flask run
 
-To stop running press:\n
-^c (mac)\n
-ctrl+c (windows)
+To stop running press: ^c (mac) or ctrl+c (windows)
 
 ## How to Test
 To run the tests.py script run the "python tests.py" command in your terminal 
