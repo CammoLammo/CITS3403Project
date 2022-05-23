@@ -81,7 +81,7 @@ def signup():
         return redirect(url_for('index'))
     form = SignUpForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, gamesPlayed=0, gamesWon=0, totalGuesses=0, currentStreak=0, bestStreak=0, todayGuesses=0, todayCorrect=0)
+        user = User(username=form.username.data, gamesPlayed=0, gamesWon=0, totalGuesses=0, currentStreak=0, bestStreak=0, todayGuesses=0, todayCorrect=0, isAdmin=0)
         user.create_hash(form.password.data)
         db.session.add(user)
         db.session.commit()
